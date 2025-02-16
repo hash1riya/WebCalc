@@ -1,0 +1,95 @@
+@import url(/src/css/reset.css);
+
+:root {
+  --bg-color: rgba(245, 246, 254, 255);
+  --bg-calc: rgb(255, 255, 255);
+  --bg-button: rgba(110, 118, 145, 255);
+  --bg-button-alt: rgba(245, 247, 255, 255);
+  --button-inner: rgba(110, 118, 145, 255);
+  --button-inner-alt: rgb(255, 255, 255);
+  --dark-blue: rgba(31, 43, 84, 255);
+  --red: rgba(255, 68, 90, 255);
+  --cyan: rgba(35, 136, 255, 255);
+  --yellow: rgba(255, 200, 4, 255);
+  --green: rgba(99, 222, 119, 255);
+}
+
+* {
+  font-family: "Montserrat", serif;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+/* Calculator container */
+.calcContainer {
+  box-shadow: 0px 0px 10px rgb(220, 216, 216);
+  width: 370px;
+  margin: 50px auto;
+  border-radius: 28px;
+  padding: 30px;
+  background-color: var(--bg-calc);
+}
+
+/* Display */
+.display {
+  background-color: rgba(35, 136, 255, 255);
+  height: 65px;
+  border-radius: 28px;
+  margin-bottom: 30px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 25px;
+  font-size: 25px;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Buttons container */
+.btnsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--button-inner);
+  background-color: rgba(216, 221, 240, 255);
+  transition-duration: 200ms;
+}
+.btn:hover {
+  opacity: 0.6;
+}
+.btn:nth-child(4n) {
+  color: var(--button-inner-alt);
+}
+.btn:nth-child(4) {
+  background-color: var(--dark-blue);
+}
+.btn:nth-child(8) {
+  background-color: var(--red);
+}
+.btn:nth-child(12) {
+  background-color: var(--cyan);
+}
+.btn:nth-child(16) {
+  background-color: var(--yellow);
+}
+.btn:nth-child(20) {
+  background-color: var(--green);
+}
+
+.altBtn {
+  background-color: var(--bg-button-alt);
+  box-shadow: 0px 3px 6px rgb(220, 216, 216);
+}
