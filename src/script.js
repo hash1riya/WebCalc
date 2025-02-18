@@ -12,7 +12,7 @@ let currValue = '';
 function handleInteraction(value) {
     console.log(value);
     if (operators.includes(value)) {
-        console.log('Clicked obn operator: ', value);
+        console.log('Clicked on operator: ', value);
         handleOperatorInput(value);
     }
     else {
@@ -38,23 +38,30 @@ function handleOperatorInput(value) {
 function handleEvaluate() {
     if (operations.length === 0)
         return;
-    let finalAmount = operations[0];
     if (!currValue) {
         operations.pop();
     }
     else {
         operations.push(currValue);
-        currValue = '';
     }
-    for (let i = 0; i < operations.lenght; i++) {
-
-    }
+    
+    currValue = eval(operations.join('')).toString();
+    operations = [];
+    updateUI();
 }
 
 function handleReset() {
     currValue = '';
     operations = [];
     updateUI()
+}
+
+function handleErase() {
+    if (!currValue)
+        operations.pop();
+    
+    currValue = currValue.slice(0, -1);
+    updateUI();
 }
 
 function updateUI() {
